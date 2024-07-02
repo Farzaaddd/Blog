@@ -7,6 +7,7 @@ import ArrowForwardRoundedIcon from "@mui/icons-material/ArrowForwardRounded";
 import sanitizeHtml from "sanitize-html";
 import CommentForm from "../comment/CommentForm";
 import Comments from "../comment/Comments";
+import { timeEstimate } from "../../helper/helper";
 
 const BlogPage = () => {
   const { slug } = useParams();
@@ -18,8 +19,8 @@ const BlogPage = () => {
 
   if (loading) return <Loader />;
   if (error) return <h4> Something went wrong! </h4>;
-  const { title, coverPhoto, author, content } = data.post;
 
+  const { title, coverPhoto, author, content, datePublished } = data.post;
   return (
     <Container maxWidth="lg">
       <Grid Container>
@@ -32,7 +33,21 @@ const BlogPage = () => {
           >
             {title}
           </Typography>
-          <ArrowForwardRoundedIcon onClick={() => navigate(-1)} />
+          <ArrowForwardRoundedIcon
+            onClick={() => navigate(-1)}
+            sx={{ cursor: "pointer" }}
+          />
+        </Grid>
+
+        <Grid item xs={12}>
+          <Typography
+            component="span"
+            variant="small"
+            sx={{ color: "grey" }}
+            ml={1}
+          >
+            {timeEstimate(datePublished)}
+          </Typography>
         </Grid>
 
         <Grid item xs={12} mt={6} textAlign="center">

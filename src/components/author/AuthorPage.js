@@ -14,7 +14,7 @@ const AuthorPage = () => {
 
   if (loading) return <Loader />;
   if (error) return <h4> Something went wrong! </h4>;
-  console.log({ data });
+
   const {
     author: { name, avatar, field, description, posts },
   } = data;

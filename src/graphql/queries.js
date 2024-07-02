@@ -79,6 +79,7 @@ const GET_POST_INFO = gql`
       coverPhoto {
         url
       }
+      datePublished
     }
   }
 `;

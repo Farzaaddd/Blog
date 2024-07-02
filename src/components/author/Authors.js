@@ -13,7 +13,13 @@ const Authors = () => {
 
   const { authors } = data;
   return (
-    <Grid sx={{ boxShadow: "rgba(0,0,0,0.1) 0px 4px 12px", borderRadius: 4 }}>
+    <Grid
+      container
+      sx={{
+        boxShadow: "rgba(0,0,0,0.1) 0px 4px 12px",
+        borderRadius: 4,
+      }}
+    >
       {authors.map((author, index) => (
         <React.Fragment key={author.id}>
           <Grid item xs={12} padding={2}>
@@ -40,8 +46,11 @@ const Authors = () => {
           </Grid>
 
           {index !== authors.length - 1 && (
-            <Grid item>
-              <Divider variant="middle" sx={{ margin: "10px" }} />
+            <Grid item xs={12}>
+              <Divider
+                variant="middle"
+                sx={{ margin: "10px", color: "secondary" }}
+              />
             </Grid>
           )}
         </React.Fragment>

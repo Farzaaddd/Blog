@@ -8,7 +8,6 @@ function Comments({ slug }) {
   const { loading, data, error } = useQuery(GET_POST_COMMENT, {
     variables: { slug },
   });
-  console.log({ data });
 
   if (loading) return <Loader />;
   if (error) return <h4> Something went wrong! </h4>;

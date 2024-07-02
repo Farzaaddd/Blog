@@ -9,11 +9,10 @@ import {
   Divider,
   Typography,
 } from "@mui/material";
-import React from "react";
 import { Link } from "react-router-dom";
+import { timeEstimate } from "../../helper/helper";
 
 const CardEl = ({ title, slug, coverPhoto, author, datePublished }) => {
-  // console.log(props);
   return (
     <Card sx={{ boxShadow: "rgba(0,0,0,0.1) 0px 4px 12px", borderRadius: 4 }}>
       {author && (
@@ -31,9 +30,12 @@ const CardEl = ({ title, slug, coverPhoto, author, datePublished }) => {
             </Typography>
           }
           subheader={
-            <Typography component="span" variant="small">
-              {datePublished}
-              {/* {datePublished[new Date().getMonth()]} */}
+            <Typography
+              component="span"
+              variant="small"
+              sx={{ fontSize: "12px", color: "grey" }}
+            >
+              {timeEstimate(datePublished)}
             </Typography>
           }
         />
@@ -68,7 +70,7 @@ const CardEl = ({ title, slug, coverPhoto, author, datePublished }) => {
             sx={{ width: "100%", borderRadius: 3 }}
           >
             {" "}
-            READ IT!{" "}
+            READ!{" "}
           </Button>
         </Link>
       </CardActions>
