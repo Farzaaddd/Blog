@@ -7,12 +7,14 @@ import BlogPage from "./components/blog/BlogPage";
 import AuthorPage from "./components/author/AuthorPage";
 import AllBlogs from "./components/blog/AllBlogs";
 import AllAuthors from "./components/author/AllAuthors";
+import ScrollToTop from "./components/scroll/scrollToTop";
 
 const App = () => {
   return (
     <>
       <BlogsProvider>
         <Layout>
+          <ScrollToTop />
           <Routes>
             <Route index path="/" element={<Navigate to="/home" replace />} />
             <Route path="/home" element={<HomePage />} />

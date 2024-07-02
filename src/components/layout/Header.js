@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import {
   AppBar,
   Container,
@@ -7,7 +8,7 @@ import {
   Typography,
 } from "@mui/material";
 import BookIcon from "@mui/icons-material/Book";
-import { Link } from "react-router-dom";
+import styles from "./Header.module.css";
 const Header = () => {
   return (
     <AppBar position="sticky">
@@ -20,23 +21,42 @@ const Header = () => {
             flex={1}
             sx={{ display: "flex", alignItems: "center" }}
           >
-            Farzad Blog <BookIcon sx={{ ml: 1 }} />
+            <Link
+              className={styles.links}
+              to="home"
+              style={{
+                display: "flex",
+                alignItems: "center",
+                color: "#fff",
+              }}
+            >
+              Farzad Blog <BookIcon sx={{ ml: 1 }} />
+            </Link>
           </Typography>
 
           <List sx={{ display: "flex", alignItems: "center" }}>
             <ListItem>
               {" "}
-              <Link to="home"> HOME </Link>{" "}
+              <Link to="home" className={styles.links}>
+                {" "}
+                HOME{" "}
+              </Link>{" "}
             </ListItem>
 
             <ListItem>
               {" "}
-              <Link to="blogs"> Blogs </Link>{" "}
+              <Link to="blogs" className={styles.links}>
+                {" "}
+                Blogs{" "}
+              </Link>{" "}
             </ListItem>
 
             <ListItem>
               {" "}
-              <Link to="authors"> Authors </Link>{" "}
+              <Link to="authors" className={styles.links}>
+                {" "}
+                Authors{" "}
+              </Link>{" "}
             </ListItem>
           </List>
         </Toolbar>
