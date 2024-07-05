@@ -28,28 +28,41 @@ function Comments({ slug }) {
           Comments{" "}
         </Typography>
 
-        {data.comments.map((comment) => (
-          <Grid
-            item
-            xs={12}
-            key={comment.key}
-            m={2}
-            p={2}
-            border="1px solid silver"
-            borderRadius={1}
-          >
-            <Box component="div" display="flex" alignItems="center" mb={3}>
-              <Avatar> {comment.name[0]} </Avatar>
-              <Typography component="span" variant="p" fontWeight={700} ml={1}>
-                {comment.name}
-              </Typography>
-            </Box>
+        {data.comments.length ? (
+          data.comments.map((comment) => (
+            <Grid
+              item
+              xs={12}
+              key={comment.key}
+              m={2}
+              p={2}
+              border="1px solid silver"
+              borderRadius={1}
+            >
+              <Box component="div" display="flex" alignItems="center" mb={3}>
+                <Avatar> {comment.name[0]} </Avatar>
+                <Typography
+                  component="span"
+                  variant="p"
+                  fontWeight={700}
+                  ml={1}
+                >
+                  {comment.name}
+                </Typography>
+              </Box>
 
-            <Typography component="p" variant="p">
-              {comment.text}
+              <Typography component="p" variant="p">
+                {comment.text}
+              </Typography>
+            </Grid>
+          ))
+        ) : (
+          <Grid item xs={12} sx={{ textAlign: "center" }}>
+            <Typography component="h4" variant="h6">
+              No comments yet 😟 Leave one!😀
             </Typography>
           </Grid>
-        ))}
+        )}
       </Grid>
     </Grid>
   );

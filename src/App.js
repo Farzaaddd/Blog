@@ -9,6 +9,7 @@ import AuthorPage from "./components/author/AuthorPage";
 import AllAuthors from "./components/author/AllAuthors";
 import ScrollToTop from "./components/scroll/scrollToTop";
 import AllBlogsStructure from "./components/blog/AllBlogsStructure";
+import NotFound from "./components/notFound/NotFound";
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
             <Route path="/blogs/:slug" element={<BlogPage />} />
             <Route path="/authors" element={<AllAuthors />} />
             <Route path="/authors/:slug" element={<AuthorPage />} />
+            <Route path="/*" element={<NotFound />} />
           </Routes>
         </Layout>
       </BlogsProvider>

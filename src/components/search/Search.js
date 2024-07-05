@@ -19,7 +19,6 @@ function Search() {
   const [searchParams, setSearchParams] = useSearchParams();
 
   const { blogs } = useBlogs();
-  console.log(blogs);
   const { setDisplay, query, setQuery } = useContext(BlogsContext);
 
   // looking for data we already searched it 👇

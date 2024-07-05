@@ -19,7 +19,7 @@ const CommentForm = ({ slug }) => {
       sendComment();
     } else {
       toast.warn("Please fill all the fields", {
-        position: "bottom-right",
+        position: "top-center",
       });
     }
   };

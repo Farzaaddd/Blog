@@ -1,0 +1,21 @@
+.div1 {
+  margin-top: 50px;
+  text-align: center;
+}
+.img {
+  width: 400px;
+  height: 400px;
+}
+
+.custom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 30px;
+}
