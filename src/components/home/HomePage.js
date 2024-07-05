@@ -1,12 +1,13 @@
 import { Container, Grid, Typography } from "@mui/material";
 import Authors from "../author/Authors.js";
 import Blogs from "../blog/Blogs";
-import Search from "../categories/Search.js";
+import Search from "../search/Search.js";
+import Categories from "../categories/Categories.js";
 
 function HomePage() {
   return (
-    <Container maxWidth="lg">
-      <Grid container spacing={2} padding={3}>
+    <Container maxWidth="xl">
+      <Grid container spacing={2}>
         <Grid item xs={12} md={6} mt={4}>
           <Typography
             component="h3"
@@ -15,14 +16,14 @@ function HomePage() {
             fontWeight={700}
           >
             {" "}
-            Categories{" "}
+            Search{" "}
           </Typography>
           <Search />
         </Grid>
       </Grid>
 
-      <Grid container spacing={2} padding={3}>
-        <Grid item xs={12} md={3} mt={4}>
+      <Grid container spacing={2}>
+        <Grid item xs={12} md={2} mt={4}>
           <Typography
             component="h3"
             variant="h5"
@@ -35,7 +36,7 @@ function HomePage() {
           <Authors />
         </Grid>
 
-        <Grid item xs={12} md={9} mt={4}>
+        <Grid item xs={12} md={8} mt={4}>
           <Typography
             component="h3"
             variant="h5"
@@ -46,6 +47,30 @@ function HomePage() {
             Blogs{" "}
           </Typography>
           <Blogs />
+        </Grid>
+
+        <Grid
+          item
+          xs={12}
+          md={2}
+          mt={4}
+          pr={2}
+          sx={{
+            "& .css-1t2rkjl-MuiGrid-root": {
+              marginLeft: "0px !important",
+            },
+          }}
+        >
+          <Typography
+            component="h3"
+            variant="h5"
+            marginBottom={5}
+            fontWeight={700}
+          >
+            {" "}
+            Categories{" "}
+          </Typography>
+          <Categories />
         </Grid>
       </Grid>
     </Container>

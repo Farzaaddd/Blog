@@ -7,6 +7,7 @@ import { Button, Grid } from "@mui/material";
 import { GET_BLOGS_INFO } from "../../graphql/queries";
 import {
   createQueryObject,
+  filterBlogs,
   getInitialQuery,
   searchBlogs,
 } from "../../helper/helper";
@@ -14,12 +15,12 @@ import {
 function Search() {
   const { loading } = useQuery(GET_BLOGS_INFO);
   const [search, setSearch] = useState("");
-  const [query, setQuery] = useState({});
 
   const [searchParams, setSearchParams] = useSearchParams();
 
   const { blogs } = useBlogs();
-  const { setDisplay } = useContext(BlogsContext);
+  console.log(blogs);
+  const { setDisplay, query, setQuery } = useContext(BlogsContext);
 
   // looking for data we already searched it 👇
   useEffect(() => {
@@ -34,6 +35,7 @@ function Search() {
   useEffect(() => {
     setSearchParams(query);
     let finalBlogs = searchBlogs(blogs, query.search);
+    finalBlogs = filterBlogs(finalBlogs, query.category);
     setDisplay(finalBlogs);
     setSearch(query.search || "");
   }, [query]);

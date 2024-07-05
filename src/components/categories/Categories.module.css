@@ -1,0 +1,15 @@
+.ul {
+  list-style: square;
+  line-height: 25px;
+}
+
+.ul li {
+  font-size: 12px;
+  color: blueviolet;
+  cursor: pointer;
+}
+
+.ul li:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}

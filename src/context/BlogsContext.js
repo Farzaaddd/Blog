@@ -6,6 +6,7 @@ export const BlogsContext = createContext();
 
 function BlogsProvider({ children }) {
   const { loading, data } = useQuery(GET_BLOGS_INFO);
+  const [query, setQuery] = useState({});
   const [blogs, setBlogs] = useState([]);
   const [display, setDisplay] = useState([]);
 
@@ -19,7 +20,9 @@ function BlogsProvider({ children }) {
   }, [loading]);
 
   return (
-    <BlogsContext.Provider value={{ blogs, display, setDisplay }}>
+    <BlogsContext.Provider
+      value={{ blogs, display, setDisplay, query, setQuery }}
+    >
       {children}
     </BlogsContext.Provider>
   );

@@ -2,7 +2,7 @@ import { gql } from "@apollo/client";
 
 const GET_BLOGS_INFO = gql`
   query MyQuery {
-    posts {
+    posts(first: 15) {
       author {
         ... on Author {
           id
@@ -19,6 +19,7 @@ const GET_BLOGS_INFO = gql`
         url
       }
       datePublished
+      category
     }
   }
 `;

@@ -22,9 +22,20 @@ const searchBlogs = (blogs, search) => {
   return searchedBlogs;
 };
 
+const filterBlogs = (blogs, category) => {
+  if (!category) return blogs;
+  const filteredBlogs = blogs.filter((blog) => blog.category === category);
+  return filteredBlogs;
+};
+
 const createQueryObject = (currentQuery, newQuery) => {
   if (newQuery.search === "") {
     const { search, ...rest } = currentQuery;
+    return rest;
+  }
+
+  if (newQuery.category === "all") {
+    const { category, ...rest } = currentQuery;
     return rest;
   }
 
@@ -35,7 +46,16 @@ const getInitialQuery = (searchParams) => {
   const query = {};
   const search = searchParams.get("search");
   if (search) query.search = search;
+
+  const category = searchParams.get("category");
+  if (category) query.category = category;
   return query;
 };
 
-export { timeEstimate, searchBlogs, createQueryObject, getInitialQuery };
+export {
+  timeEstimate,
+  searchBlogs,
+  createQueryObject,
+  filterBlogs,
+  getInitialQuery,
+};
