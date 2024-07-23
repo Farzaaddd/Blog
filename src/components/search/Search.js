@@ -59,12 +59,12 @@ function Search() {
           variant="outlined"
           value={search}
           style={{
-            border: "2px solid #9c27b0",
+            border: "2px solid #4D194D",
             padding: "10px",
             width: "250px",
             outline: "none",
             fontSize: ".9rem",
-            color: "#9c27b0",
+            color: "#212F45",
             borderRadius: "10px",
             marginRight: "3px",
           }}
@@ -73,7 +73,11 @@ function Search() {
         <Button
           variant="outlined"
           size="small"
-          sx={{ width: "100%", borderRadius: 3, border: "2px solid" }}
+          sx={{
+            width: "100%",
+            borderRadius: 3,
+            border: "2px solid",
+          }}
           onClick={searchHandler}
         >
           {" "}

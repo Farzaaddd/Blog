@@ -15,7 +15,7 @@ const Blogs = () => {
   if (error) return <h4> Something went wrong! </h4>;
 
   return (
-    <Grid container spacing={2}>
+    <Grid container spacing={2} mb={15}>
       {display.length ? (
         display.map((blog) => (
           <Grid item xs={12} sm={6} md={4} key={display.id}>

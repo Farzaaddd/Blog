@@ -14,15 +14,19 @@ const theme = createTheme({
 
   palette: {
     primary: {
-      main: "#9c27b0",
+      main: "#4D194D",
     },
 
-    secondary: {
-      main: teal[400],
-    },
+    // secondary: {
+    //   main: teal[400],
+    // },
 
     grey: {
       main: "#616161",
+    },
+
+    secondary: {
+      main: "#006466",
     },
   },
 });

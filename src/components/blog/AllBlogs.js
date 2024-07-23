@@ -15,7 +15,7 @@ const AllBlogs = () => {
   if (loading) return <Loader />;
   if (error) return <h4> Something went wrong! </h4>;
   return (
-    <Grid container spacing={3}>
+    <Grid container spacing={3} mb={15}>
       {display.length ? (
         display.map((post) => (
           <Grid item xs={12} sm={6} md={4} key={post.id}>

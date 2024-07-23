@@ -14,6 +14,7 @@ function HomePage() {
             variant="h5"
             marginBottom={4}
             fontWeight={700}
+            color="secondary"
           >
             {" "}
             Search{" "}
@@ -29,6 +30,7 @@ function HomePage() {
             variant="h5"
             marginBottom={3}
             fontWeight={700}
+            color="secondary"
           >
             {" "}
             Authors{" "}
@@ -42,6 +44,7 @@ function HomePage() {
             variant="h5"
             marginBottom={3}
             fontWeight={700}
+            color="secondary"
           >
             {" "}
             Blogs{" "}
@@ -66,6 +69,7 @@ function HomePage() {
             variant="h5"
             marginBottom={5}
             fontWeight={700}
+            color="secondary"
           >
             {" "}
             Categories{" "}

@@ -28,7 +28,7 @@ const BlogPage = () => {
           <Typography
             component="h2"
             variant="h4"
-            color="primary"
+            color="secondary"
             fontWeight={700}
           >
             {title}
@@ -65,7 +65,12 @@ const BlogPage = () => {
             sx={{ width: 80, height: 80, marginRight: 2 }}
           />
           <Box component="div">
-            <Typography component="p" variant="h6" fontWeight={700}>
+            <Typography
+              component="p"
+              variant="h6"
+              fontWeight={700}
+              color="primary"
+            >
               {author.name}
             </Typography>
 
